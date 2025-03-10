@@ -1,5 +1,3 @@
-# DAX-essentials
-
 # SUM
 
 ## Descripción
