@@ -1,0 +1,15 @@
+-- Medida: [Promedio de Ventas por Pedido]
+-- Objetivo: Calcular el promedio de las ventas totales por cada pedido.
+-- Lógica:
+-- 1. Itera sobre cada fila de la tabla 'Orders'.
+-- 2. Para cada pedido, calcula las ventas totales (SUM(RELATEDTABLE(Sales[Amount]))).
+-- 3. Calcula el promedio de estas ventas totales por pedido.
+
+[Promedio de Ventas por Pedido] =
+AVERAGEX (
+    Orders,
+    CALCULATE (SUM(Sales[Amount]))
+)
+
+-- Consideraciones:
+-- - Útil para promediar valores que requieren un cálculo por fila.

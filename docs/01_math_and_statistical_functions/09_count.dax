@@ -1,0 +1,11 @@
+-- Medida: [Número de Productos]
+-- Objetivo: Contar el número total de productos.
+-- Lógica:
+-- Cuenta el número de filas en la tabla 'Products'.
+
+[Número de Productos] =
+COUNT (Products[ProductID])
+
+-- Consideraciones:
+-- - Cuenta valores numéricos, fechas y cadenas.
+-- - No cuenta valores BLANK.

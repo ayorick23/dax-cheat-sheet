@@ -1,0 +1,21 @@
+-- Medida: [Clasificación de Ventas]
+-- Objetivo: Clasificar las ventas en diferentes categorías ("Baja", "Media", "Alta", "Superalta") basadas en el total de ventas.
+-- Lógica:
+-- 1. SWITCH evalúa una serie de pares de valor/resultado.
+-- 2. Para cada par, si la expresión ([Total Ventas]) coincide con el valor, devuelve el resultado asociado.
+-- 3. Si no hay coincidencias, devuelve el último valor (resultado ELSE), que en este caso es "Otros".
+
+[Clasificación de Ventas] =
+SWITCH (
+    TRUE (), -- Siempre usar TRUE() para evaluar condiciones una por una
+    [Total Ventas] < 100, "Baja",
+    [Total Ventas] < 500, "Media",
+    [Total Ventas] < 1000, "Alta",
+    [Total Ventas] >= 1000, "Superalta",
+    "Otros" -- Resultado ELSE (opcional)
+)
+
+-- Consideraciones:
+-- - SWITCH es una alternativa más legible y eficiente que IF anidados para múltiples condiciones.
+-- - Cuando el primer argumento es TRUE(), permite evaluar una serie de condiciones lógicas en lugar de valores exactos.
+-- - El resultado ELSE es opcional, si se omite y no hay coincidencia, la función devolverá BLANK.

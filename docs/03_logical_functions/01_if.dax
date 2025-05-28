@@ -1,0 +1,18 @@
+-- Medida: [Estado de Pedido Grande]
+-- Objetivo: Clasificar los pedidos como "Grande" si el total de ventas supera los $1000, de lo contrario, "Pequeño".
+-- Lógica:
+-- Evalúa una condición (SUM(Sales[SalesAmount]) > 1000).
+-- Si la condición es VERDADERA, devuelve el primer resultado ("Grande").
+-- Si la condición es FALSA, devuelve el segundo resultado ("Pequeño").
+
+[Estado de Pedido Grande] =
+IF (
+    SUM (Sales[SalesAmount]) > 1000,
+    "Grande",
+    "Pequeño"
+)
+
+-- Consideraciones:
+-- - La función IF es fundamental para la lógica condicional en DAX.
+-- - La expresión lógica se evalúa primero, y luego se devuelve uno de los dos valores resultantes.
+-- - El tipo de dato de los resultados debe ser consistente (ambos texto, ambos números, etc.).

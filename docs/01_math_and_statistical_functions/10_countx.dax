@@ -1,0 +1,14 @@
+-- Medida: [Número de Pedidos con Descuento]
+-- Objetivo: Contar el número de pedidos donde el descuento es mayor que cero.
+-- Lógica:
+-- 1. Itera sobre cada fila de la tabla 'Orders'.
+-- 2. Cuenta las filas donde 'Orders[Discount]' no es BLANK.
+
+[Número de Pedidos con Descuento] =
+COUNTX (
+    Orders,
+    Orders[Discount]
+)
+
+-- Consideraciones:
+-- - Útil para contar filas que cumplen una condición.

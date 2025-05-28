@@ -1,0 +1,11 @@
+-- Medida: [Tasa de Crecimiento Geométrico]
+-- Objetivo: Calcular la tasa de crecimiento geométrico de una serie de valores.
+-- Lógica:
+-- Calcula la media geométrica de la columna 'GrowthRates[Rate]'.
+
+[Tasa de Crecimiento Geométrico] =
+GEOMEAN (GrowthRates[Rate])
+
+-- Consideraciones:
+-- - Útil para calcular tasas de crecimiento promedio.
+-- - Ignora valores no numéricos y cero.

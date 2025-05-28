@@ -1,0 +1,16 @@
+-- Medida: [Total Ventas por Producto]
+-- Objetivo: Calcular las ventas totales, multiplicando precio por cantidad para cada producto, y luego sumando.
+-- Lógica:
+-- 1. Itera sobre cada fila de la tabla 'Sales'.
+-- 2. Para cada fila, multiplica 'Sales[Price]' por 'Sales[Quantity]'.
+-- 3. Suma los resultados de cada fila.
+
+[Total Ventas por Producto] =
+SUMX (
+    Sales,
+    Sales[Price] * Sales[Quantity]
+)
+
+-- Consideraciones:
+-- - SUMX es una función iteradora, por lo que evalúa la expresión para cada fila.
+-- - Útil cuando necesitas hacer cálculos a nivel de fila antes de agregar.

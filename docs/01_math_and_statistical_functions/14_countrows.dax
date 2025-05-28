@@ -1,0 +1,10 @@
+-- Medida: [Número de Filas en Productos]
+-- Objetivo: Contar el número total de filas en la tabla 'Products'.
+-- Lógica:
+-- Cuenta todas las filas en la tabla 'Products', independientemente del contenido.
+
+[Número de Filas en Productos] =
+COUNTROWS (Products)
+
+-- Consideraciones:
+-- - A diferencia de COUNT, COUNTROWS cuenta *todas* las filas.

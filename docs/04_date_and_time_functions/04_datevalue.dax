@@ -1,0 +1,12 @@
+-- Columna Calculada: [Fecha de Texto a Fecha]
+-- Objetivo: Convertir una cadena de texto que representa una fecha en un valor de fecha DAX.
+-- Lógica:
+-- Transforma la columna de texto 'DataImport'[FechaTexto] (ej. "2023-01-15") en un formato de fecha reconocido.
+
+[Fecha de Texto a Fecha] =
+DATEVALUE ( DataImport[FechaTexto] )
+
+-- Consideraciones:
+-- - DATEVALUE es útil cuando importas datos donde las fechas están almacenadas como texto y necesitas convertirlas a un tipo de dato de fecha/hora.
+-- - El formato de la cadena de texto debe ser reconocido por Power BI o el motor de Power Query.
+-- - Si la cadena de texto incluye información de hora, se ignora.

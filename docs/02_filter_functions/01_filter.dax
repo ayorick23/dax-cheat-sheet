@@ -1,0 +1,14 @@
+-- Tabla Calculada/Medida: [Productos Caros]
+-- Objetivo: Crear una tabla que contenga solo los productos cuyo precio unitario es superior a $50.
+-- Lógica:
+-- Utiliza FILTER para crear una nueva tabla basándose en una condición específica (Price > 50) aplicada a cada fila de la tabla 'Products'.
+
+[Productos Caros] =
+FILTER (
+    Products,
+    Products[Price] > 50
+)
+
+-- Consideraciones:
+-- - FILTER devuelve una tabla, no un valor escalar. Por lo tanto, se usa comúnmente dentro de otras funciones como CALCULATE, SUMX, etc., o para crear tablas calculadas.
+-- - La expresión de filtro se evalúa para cada fila de la tabla que se está filtrando.

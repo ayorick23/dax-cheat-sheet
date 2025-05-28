@@ -1,0 +1,22 @@
+-- Medida: [Ventas de Producto Premium y con Descuento]
+-- Objetivo: Calcular las ventas de productos que son tanto de la categoría "Premium" como tienen un descuento aplicado.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. La función AND combina dos condiciones lógicas:
+--    - El producto pertenece a la categoría "Premium".
+--    - El descuento del producto es mayor que 0.
+-- 3. Solo se contarán las ventas que cumplan AMBAS condiciones.
+
+[Ventas de Producto Premium y con Descuento] =
+CALCULATE (
+    [Total Ventas],
+    AND (
+        Products[Category] = "Premium",
+        Sales[Discount] > 0
+    )
+)
+
+-- Consideraciones:
+-- - AND devuelve TRUE si todas las expresiones lógicas son TRUE; de lo contrario, devuelve FALSE.
+-- - Se usa comúnmente dentro de funciones que modifican el contexto como CALCULATE o FILTER.
+-- - Puedes encadenar múltiples condiciones AND (Ej: AND(cond1, AND(cond2, cond3))).

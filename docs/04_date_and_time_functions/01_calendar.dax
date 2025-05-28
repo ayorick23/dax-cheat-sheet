@@ -1,0 +1,16 @@
+-- Tabla Calculada: 'Tabla de Fechas'
+-- Objetivo: Crear una tabla de fechas dinámica que abarque un rango específico de años.
+-- Lógica:
+-- Utiliza CALENDAR para generar una tabla de una sola columna ('Date') que contiene todas las fechas
+-- entre la fecha mínima de la columna 'OrderDate' en la tabla 'Sales' y la fecha máxima de 'OrderDate' en 'Sales'.
+
+'Tabla de Fechas' =
+CALENDAR (
+    MIN (Sales[OrderDate]),
+    MAX (Sales[OrderDate])
+)
+
+-- Consideraciones:
+-- - CALENDAR es la forma más común y eficiente de crear una tabla de fechas en DAX.
+-- - Es crucial marcar esta tabla como "Tabla de fechas" en la vista de Modelo de Power BI Desktop para habilitar las funciones de Time Intelligence.
+-- - Se recomienda extender el rango de fechas para incluir el año actual y, posiblemente, algunos años futuros si se usan previsiones.

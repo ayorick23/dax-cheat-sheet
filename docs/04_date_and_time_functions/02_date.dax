@@ -1,0 +1,15 @@
+-- Columna Calculada: [Fecha de Lanzamiento del Producto]
+-- Objetivo: Combinar columnas de año, mes y día para crear una columna de tipo fecha válida.
+-- Lógica:
+-- Crea una nueva columna en la tabla 'Products' que ensambla una fecha utilizando el 'LaunchYear', 'LaunchMonth' y 'LaunchDay' disponibles en la misma fila.
+
+[Fecha de Lanzamiento del Producto] =
+DATE (
+    Products[LaunchYear],
+    Products[LaunchMonth],
+    Products[LaunchDay]
+)
+
+-- Consideraciones:
+-- - La función DATE es útil cuando tus componentes de fecha (año, mes, día) están en columnas separadas.
+-- - Si alguno de los argumentos no es un número válido, la función puede devolver un error.

@@ -1,0 +1,15 @@
+-- Medida: [Total Ventas (Ignorando Fila en Blanco)]
+-- Objetivo: Calcular el total de ventas de todos los productos, excluyendo la fila en blanco que a veces aparece en las relaciones.
+-- Lógica:
+-- 1. Usa ALLNOBLANKROW para obtener todas las filas de la tabla 'Products', excepto la fila de "espacio en blanco" (blank row) que Git crea para manejar las relaciones uno a muchos donde hay datos no coincidentes.
+-- 2. Calcula el [Total Ventas] dentro de este contexto modificado.
+
+[Total Ventas (Ignorando Fila en Blanco)] =
+CALCULATE (
+    [Total Ventas],
+    ALLNOBLANKROW (Products)
+)
+
+-- Consideraciones:
+-- - Se usa principalmente para limpiar el contexto de filtro de la fila en blanco en tablas relacionadas.
+-- - Es una alternativa más segura a ALL(Table) cuando no quieres incluir la fila en blanco.

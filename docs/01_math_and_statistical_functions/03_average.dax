@@ -1,0 +1,10 @@
+-- Medida: [Precio Promedio]
+-- Objetivo: Calcular el precio promedio de todos los productos.
+-- Lógica:
+-- Utiliza la función AVERAGE para calcular el promedio de la columna 'Products[Price]'.
+
+[Precio Promedio] =
+AVERAGE (Products[Price])
+
+-- Consideraciones:
+-- - Ignora los valores BLANK.

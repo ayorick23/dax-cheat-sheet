@@ -1,0 +1,10 @@
+-- Medida: [Precio Mínimo]
+-- Objetivo: Encontrar el precio mínimo de todos los productos.
+-- Lógica:
+-- Encuentra el valor mínimo en la columna 'Products[Price]'.
+
+[Precio Mínimo] =
+MIN (Products[Price])
+
+-- Consideraciones:
+-- - Ignora los valores BLANK.

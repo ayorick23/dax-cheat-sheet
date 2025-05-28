@@ -1,0 +1,18 @@
+-- Medida: [Ventas sin Descuento]
+-- Objetivo: Calcular las ventas de productos a los que NO se les ha aplicado ningún descuento.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. La función NOT invierte el resultado de la expresión lógica:
+--    - Si Sales[Discount] > 0 es TRUE, NOT lo convierte en FALSE.
+--    - Si Sales[Discount] > 0 es FALSE, NOT lo convierte en TRUE.
+-- 3. Solo se contarán las ventas donde el descuento NO sea mayor que 0 (es decir, sea 0 o BLANK).
+
+[Ventas sin Descuento] =
+CALCULATE (
+    [Total Ventas],
+    NOT (Sales[Discount] > 0)
+)
+
+-- Consideraciones:
+-- - NOT invierte un valor lógico (TRUE se convierte en FALSE, FALSE se convierte en TRUE).
+-- - Es útil para definir condiciones de exclusión o para simplificar la lógica de filtro.

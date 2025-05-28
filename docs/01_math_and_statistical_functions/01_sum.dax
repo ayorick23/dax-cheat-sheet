@@ -1,0 +1,12 @@
+-- Medida: [Total Ventas]
+-- Objetivo: Calcular la suma total de la columna [SalesAmount] de la tabla 'FactSales'.
+-- Lógica:
+-- Utiliza la función SUM para agregar todos los valores de la columna especificada.
+-- Esta medida se evalúa dentro del contexto de filtro de la visualización.
+
+[Total Ventas] = 
+SUM (FactSales[SalesAmount])
+
+-- Consideraciones:
+-- - Asegúrate de que 'FactSales[SalesAmount]' sea una columna numérica.
+-- - Esta es una medida básica y fundamental.

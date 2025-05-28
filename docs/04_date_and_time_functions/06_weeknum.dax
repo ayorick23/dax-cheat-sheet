@@ -1,0 +1,14 @@
+-- Columna Calculada: [Número de Semana del Año]
+-- Objetivo: Obtener el número de la semana del año para una fecha específica.
+-- Lógica:
+-- Calcula el número de la semana para cada 'OrderDate' en la tabla 'Sales', utilizando el tipo de retorno 1 (la semana empieza el domingo).
+
+[Número de Semana del Año] =
+WEEKNUM (
+    Sales[OrderDate],
+    1 -- Tipo de retorno: 1 (Semana comienza en domingo) o 2 (Semana comienza en lunes)
+)
+
+-- Consideraciones:
+-- - El segundo argumento (`return_type`) es importante, ya que define en qué día comienza la semana y cómo se numera la primera semana del año.
+-- - Asegúrate de elegir el `return_type` que se alinee con las convenciones de tu negocio.

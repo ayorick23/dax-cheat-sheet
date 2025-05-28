@@ -1,0 +1,16 @@
+-- Medida: [Ventas por Categoría (Excluyendo Producto)]
+-- Objetivo: Calcular las ventas totales por Categoría de Producto, manteniendo los filtros en esa categoría, pero eliminando cualquier filtro en el producto.
+-- Lógica:
+-- 1. Usa ALLEXCEPT para eliminar todos los filtros de la tabla 'Products' EXCEPTO los filtros aplicados a la columna 'Product'[Category].
+-- 2. Calcula el [Total Ventas] dentro de este contexto modificado.
+
+[Ventas por Categoría (Excluyendo Producto)] =
+CALCULATE (
+    [Total Ventas],
+    ALLEXCEPT (Products, Products[Category])
+)
+
+-- Consideraciones:
+-- - ALLEXCEPT elimina todos los filtros contextuales excepto los que se han aplicado a las columnas especificadas.
+-- - Útil cuando quieres mantener un filtro en una o más columnas, pero quitar el resto de la tabla.
+-- - A menudo se utiliza para subtotales o agregaciones a un nivel particular de jerarquía.

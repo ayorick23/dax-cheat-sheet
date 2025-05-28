@@ -1,0 +1,15 @@
+-- Medida: [Mediana de Ventas por Cliente]
+-- Objetivo: Encontrar la mediana de las ventas totales por cliente.
+-- Lógica:
+-- 1. Itera sobre cada cliente.
+-- 2. Calcula las ventas totales para cada cliente.
+-- 3. Encuentra la mediana de estas ventas totales.
+
+[Mediana de Ventas por Cliente] =
+MEDIANX (
+    Customers,
+    CALCULATE (SUM(Sales[Amount]))
+)
+
+-- Consideraciones:
+-- - Similar a AVERAGEX, pero usa la mediana en lugar del promedio.

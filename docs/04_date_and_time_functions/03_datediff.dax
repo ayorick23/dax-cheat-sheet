@@ -1,0 +1,16 @@
+-- Medida: [Días Desde Última Compra]
+-- Objetivo: Calcular el número de días transcurridos desde la última compra de un cliente hasta la fecha actual.
+-- Lógica:
+-- 1. Obtiene la fecha máxima de la última compra para el cliente actual (dentro del contexto).
+-- 2. Calcula la diferencia en días entre la fecha máxima de compra y la fecha actual (TODAY()).
+
+[Días Desde Última Compra] =
+DATEDIFF (
+    MAX (Sales[OrderDate]),
+    TODAY (),
+    DAY
+)
+
+-- Consideraciones:
+-- - DATEDIFF calcula la diferencia entre dos fechas en el intervalo especificado (DAY, MONTH, QUARTER, YEAR, etc.).
+-- - Asegúrate de que ambas fechas sean válidas y el orden sea el esperado (fecha_inicial, fecha_final).

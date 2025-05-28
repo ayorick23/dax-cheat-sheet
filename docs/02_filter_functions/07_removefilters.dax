@@ -1,0 +1,16 @@
+-- Medida: [Ventas Totales sin Filtro de Producto]
+-- Objetivo: Calcular las ventas totales ignorando cualquier filtro en la tabla 'Products'.
+-- Lógica:
+-- 1. Utiliza REMOVEFILTERS para eliminar todos los filtros de la tabla 'Products'.
+-- 2. Calcula el [Total Ventas] bajo este nuevo contexto.
+
+[Ventas Totales sin Filtro de Producto] =
+CALCULATE (
+    [Total Ventas],
+    REMOVEFILTERS (Products)
+)
+
+-- Consideraciones:
+-- - REMOVEFILTERS es semánticamente equivalente a ALL(Table) o ALL(Column) cuando se usa en un contexto de filtro.
+-- - A menudo es preferido por su claridad y concisión, especialmente para eliminar todos los filtros de una tabla o columna.
+-- - Puedes usar REMOVEFILTERS ( Table[Column1], Table[Column2] ) para remover filtros de columnas específicas.

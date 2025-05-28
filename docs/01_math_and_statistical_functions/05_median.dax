@@ -1,0 +1,10 @@
+-- Medida: [Precio Medio]
+-- Objetivo: Encontrar el precio medio de los productos.
+-- Lógica:
+-- Calcula la mediana de la columna 'Products[Price]'.
+
+[Precio Medio] =
+MEDIAN (Products[Price])
+
+-- Consideraciones:
+-- - Adecuado cuando los datos tienen valores atípicos que podrían sesgar el promedio.

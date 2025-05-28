@@ -1,0 +1,17 @@
+-- Medida: [Porcentaje de Ventas del Total General]
+-- Objetivo: Calcular el porcentaje que las ventas actuales representan del total de ventas general (ignorando todos los filtros).
+-- Lógica:
+-- 1. Calcula las ventas totales bajo el contexto de filtro actual ([Total Ventas]).
+-- 2. Calcula el total de ventas ignorando *todos* los filtros de la tabla 'Sales' (ALL(Sales)).
+-- 3. Divide las ventas actuales entre el total general.
+
+[Porcentaje de Ventas del Total General] =
+DIVIDE (
+    [Total Ventas],
+    CALCULATE ([Total Ventas], ALL (Sales))
+)
+
+-- Consideraciones:
+-- - ALL(Table) elimina todos los filtros aplicados a la tabla especificada.
+-- - ALL(Column) elimina todos los filtros aplicados a la columna especificada, pero mantiene los filtros de otras columnas de la tabla.
+-- - Es crucial para cálculos de porcentaje del total o comparaciones con valores sin filtrar.

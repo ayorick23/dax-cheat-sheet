@@ -1,0 +1,17 @@
+-- Medida: [Ventas Mes Anterior]
+-- Objetivo: Calcular las ventas totales para el mes anterior al contexto actual.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. DATEADD mueve el contexto de fecha un período específico (en este caso, -1 mes) desde el contexto de fecha actual.
+
+[Ventas Mes Anterior] =
+CALCULATE (
+    [Total Ventas],
+    DATEADD ('Tabla de Fechas'[Date], -1, MONTH)
+)
+
+-- Consideraciones:
+-- - DATEADD permite desplazar un período de tiempo hacia adelante o hacia atrás.
+-- - El segundo argumento indica el número de intervalos (positivos para futuro, negativos para pasado).
+-- - El tercer argumento define la granularidad del intervalo (DAY, MONTH, QUARTER, YEAR).
+-- - Es crucial tener una tabla de fechas marcada como tal y una relación activa con la tabla de hechos.

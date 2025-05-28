@@ -1,0 +1,11 @@
+-- Columna Calculada: [Número de Mes del Pedido]
+-- Objetivo: Extraer el número del mes (1-12) de una columna de fecha.
+-- Lógica:
+-- Obtiene el componente de mes de la fecha de pedido 'Sales[OrderDate]'.
+
+[Número de Mes del Pedido] =
+MONTH (Sales[OrderDate])
+
+-- Consideraciones:
+-- - MONTH devuelve un número entero del 1 al 12.
+-- - Frecuentemente usado para crear columnas de mes para filtros o análisis, o para construir tablas de tiempo.

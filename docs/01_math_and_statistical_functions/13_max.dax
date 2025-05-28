@@ -1,0 +1,10 @@
+-- Medida: [Precio Máximo]
+-- Objetivo: Encontrar el precio máximo de todos los productos.
+-- Lógica:
+-- Encuentra el valor máximo en la columna 'Products[Price]'.
+
+[Precio Máximo] =
+MAX (Products[Price])
+
+-- Consideraciones:
+-- - Ignora los valores BLANK.

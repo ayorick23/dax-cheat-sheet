@@ -1,0 +1,19 @@
+-- Medida: [Ranking de Ventas por Producto]
+-- Objetivo: Clasificar los productos por ventas totales.
+-- Lógica:
+-- 1. Itera sobre *todos* los productos.
+-- 2. Calcula las ventas totales para *cada* producto.
+-- 3. Clasifica los productos en función de estas ventas totales.
+
+[Ranking de Ventas por Producto] =
+RANKX (
+    ALL (Products[ProductName]),
+    [Total Ventas],  -- Asume que tienes una medida llamada [Total Ventas]
+    ,   -- Opcional: Especifica el orden (ASC o DESC). Si se omite, es DESC.
+    ,   -- Opcional: Especifica cómo manejar los empates (SKIP o DENSE). Si se omite, es SKIP.
+    DESC
+)
+
+-- Consideraciones:
+-- - RANKX es una función iteradora.
+-- - ALL() es muy importante para eliminar los filtros.

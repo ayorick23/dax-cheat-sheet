@@ -1,0 +1,14 @@
+-- Medida: [Margen de Ganancia]
+-- Objetivo: Calcular el margen de ganancia (Ganancia / Ventas), manejando la división por cero.
+-- Lógica:
+-- Divide las 'Ventas' por el 'Costo', y si el 'Costo' es cero, devuelve 0.
+
+[Margen de Ganancia] =
+DIVIDE (
+    SUM (Sales[Profit]),
+    SUM (Sales[SalesAmount]),
+    0
+)
+
+-- Consideraciones:
+-- - DIVIDE es la forma recomendada de dividir en DAX, ya que maneja automáticamente la división por cero.

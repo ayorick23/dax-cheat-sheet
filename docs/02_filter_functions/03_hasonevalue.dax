@@ -1,0 +1,17 @@
+-- Medida: [Ventas por Región (Detalle Único)]
+-- Objetivo: Mostrar las ventas por región si solo se selecciona una región, de lo contrario, mostrar un mensaje de advertencia.
+-- Lógica:
+-- 1. Comprueba si solo hay un valor seleccionado en la columna 'Geography'[Region].
+-- 2. Si es así, devuelve el [Total Ventas].
+-- 3. Si no, devuelve el texto "Selecciona solo una región".
+
+[Ventas por Región (Detalle Único)] =
+IF (
+    HASONEVALUE (Geography[Region]),
+    [Total Ventas],
+    "Selecciona solo una región"
+)
+
+-- Consideraciones:
+-- - HASONEVALUE es útil para controlar el comportamiento de una medida según el contexto de filtro.
+-- - Permite crear informes más interactivos y evitar visualizaciones confusas cuando se seleccionan múltiples elementos.

@@ -1,0 +1,11 @@
+-- Columna Calculada: [Día del Mes del Pedido]
+-- Objetivo: Extraer el número del día (1-31) de una columna de fecha.
+-- Lógica:
+-- Obtiene el componente de día de la fecha de pedido 'Sales[OrderDate]'.
+
+[Día del Mes del Pedido] =
+DAY (Sales[OrderDate])
+
+-- Consideraciones:
+-- - DAY devuelve un número entero que representa el día del mes.
+-- - Útil para segmentar datos por día del mes o para crear jerarquías de fecha personalizadas.

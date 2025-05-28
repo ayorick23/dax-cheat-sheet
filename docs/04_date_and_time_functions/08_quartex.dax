@@ -1,0 +1,11 @@
+-- Columna Calculada: [Trimestre del Pedido]
+-- Objetivo: Obtener el número del trimestre del año para una fecha específica.
+-- Lógica:
+-- Calcula el número del trimestre para cada 'OrderDate' en la tabla 'Sales'.
+
+[Trimestre del Pedido] =
+QUARTER (Sales[OrderDate])
+
+-- Consideraciones:
+-- - QUARTER devuelve un número entero del 1 al 4, representando el trimestre fiscal estándar (enero-marzo = Q1, etc.).
+-- - Si necesitas un trimestre fiscal que no comience en enero, tendrías que usar una lógica más compleja o una tabla de fechas personalizada.

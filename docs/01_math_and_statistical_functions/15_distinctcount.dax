@@ -1,0 +1,10 @@
+-- Medida: [Número de Clientes Únicos]
+-- Objetivo: Contar el número de clientes únicos.
+-- Lógica:
+-- Cuenta el número de valores distintos en la columna 'Customers[CustomerID]'.
+
+[Número de Clientes Únicos] =
+DISTINCTCOUNT (Customers[CustomerID])
+
+-- Consideraciones:
+-- - Útil para contar valores únicos en una columna.

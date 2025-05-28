@@ -1,0 +1,21 @@
+-- Medida: [Ventas de Clientes VIP o con Envío Gratuito]
+-- Objetivo: Calcular las ventas de clientes que son "VIP" o que han recibido envío gratuito.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. La función OR combina dos condiciones lógicas:
+--    - El cliente es "VIP".
+--    - El tipo de envío es "Gratis".
+-- 3. Se contarán las ventas que cumplan AL MENOS UNA de las dos condiciones.
+
+[Ventas de Clientes VIP o con Envío Gratuito] =
+CALCULATE (
+    [Total Ventas],
+    OR (
+        Customers[CustomerType] = "VIP",
+        Sales[ShippingType] = "Gratis"
+    )
+)
+
+-- Consideraciones:
+-- - OR devuelve TRUE si al menos una de las expresiones lógicas es TRUE; de lo contrario, devuelve FALSE.
+-- - Es útil para situaciones donde un valor puede caer en varias categorías o cumplir varias condiciones.

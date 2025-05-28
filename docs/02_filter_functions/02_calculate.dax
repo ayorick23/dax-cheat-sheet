@@ -1,0 +1,16 @@
+-- Medida: [Ventas en 2023]
+-- Objetivo: Calcular las ventas totales para el año 2023, independientemente de los filtros de fecha actuales en la visualización.
+-- Lógica:
+-- 1. Inicia con la medida base '[Total Ventas]'.
+-- 2. Modifica el contexto de filtro existente, añadiendo un filtro para que 'Date'[Year] sea igual a 2023.
+
+[Ventas en 2023] =
+CALCULATE (
+    [Total Ventas], -- Asume que [Total Ventas] es una medida ya definida
+    'Date'[Year] = 2023
+)
+
+-- Consideraciones:
+-- - CALCULATE es la función más poderosa en DAX, ya que permite modificar el contexto de filtro.
+-- - Los filtros pasados a CALCULATE sobrescriben o añaden filtros existentes en el contexto de filtro.
+-- - Es fundamental para el cálculo de KPIs, comparaciones de tiempo y análisis complejos.

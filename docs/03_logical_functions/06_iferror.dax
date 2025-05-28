@@ -1,0 +1,16 @@
+-- Medida: [Precio Promedio por Unidad (Seguro)]
+-- Objetivo: Calcular el precio promedio por unidad, manejando posibles errores de división por cero o BLANKs.
+-- Lógica:
+-- 1. Intenta calcular el [Total Ventas] dividido por el [Total Unidades].
+-- 2. Si la expresión del cálculo genera un error (ej. división por cero si [Total Unidades] es 0), entonces IFERROR devuelve el segundo argumento (0 en este caso).
+
+[Precio Promedio por Unidad (Seguro)] =
+IFERROR (
+    DIVIDE ( [Total Ventas], [Total Unidades] ), -- Asume que tienes [Total Unidades] como medida
+    0 -- Valor a devolver si ocurre un error
+)
+
+-- Consideraciones:
+-- - IFERROR es crucial para manejar errores gracefully, evitando que las visualizaciones muestren mensajes de error.
+-- - Se recomienda usar DIVIDE para divisiones, ya que ya maneja la división por cero. IFERROR sería para otros tipos de errores.
+-- - El segundo argumento puede ser BLANK(), un texto o cualquier valor que desees mostrar en caso de error.

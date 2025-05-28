@@ -1,0 +1,14 @@
+-- Medida: [Tasa de Crecimiento Geométrico por Categoría]
+-- Objetivo: Calcular la tasa de crecimiento geométrico por categoría de producto.
+-- Lógica:
+-- 1. Itera sobre cada categoría de producto.
+-- 2. Calcula la tasa de crecimiento geométrico para cada categoría.
+
+[Tasa de Crecimiento Geométrico por Categoría] =
+GEOMEANX (
+    ProductCategories,
+    CALCULATE (GEOMEAN(Sales[GrowthRate]))
+)
+
+-- Consideraciones:
+-- - Similar a GEOMEAN, pero permite calcular la media geométrica por grupo.
