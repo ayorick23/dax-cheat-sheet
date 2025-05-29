@@ -1,0 +1,20 @@
+-- Medida: [Ventas Inicio de Mes]
+-- Objetivo: Calcular las ventas totales desde el inicio del mes hasta la fecha actual en el contexto.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. STARTOFMONTH devuelve la primera fecha del mes que se encuentra en el contexto de filtro actual.
+-- 3. La combinación con DATESBETWEEN permite calcular un acumulado desde el inicio del mes.
+
+[Ventas Inicio de Mes] =
+CALCULATE (
+    [Total Ventas],
+    DATESBETWEEN (
+        'Tabla de Fechas'[Date],
+        STARTOFMONTH ( 'Tabla de Fechas'[Date] ),
+        MAX ( 'Tabla de Fechas'[Date] )
+    )
+)
+
+-- Consideraciones:
+-- - STARTOFMONTH se usa a menudo dentro de otras funciones como DATESBETWEEN para definir rangos.
+-- - También existe TOTALMTD (Total Month To Date) como una alternativa más directa para acumulados de mes.

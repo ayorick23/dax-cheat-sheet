@@ -1,0 +1,16 @@
+-- Medida: [Ventas Mismo Período Año Anterior]
+-- Objetivo: Calcular las ventas totales para el mismo período (día, mes, trimestre) del año anterior.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. SAMEPERIODLASTYEAR desplaza el contexto de fecha actual exactamente un año hacia atrás, manteniendo la granularidad del período.
+
+[Ventas Mismo Período Año Anterior] =
+CALCULATE (
+    [Total Ventas],
+    SAMEPERIODLASTYEAR ( 'Tabla de Fechas'[Date] )
+)
+
+-- Consideraciones:
+-- - Muy útil para comparaciones año-contra-año (YoY).
+-- - Mantiene los filtros de granularidad (si es un día, busca el mismo día; si es un mes, el mismo mes).
+-- - Requiere una tabla de fechas continua sin agujeros.

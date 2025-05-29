@@ -1,0 +1,15 @@
+-- Medida: [Ventas Acumuladas Año (YTD)]
+-- Objetivo: Calcular las ventas acumuladas desde el inicio del año hasta la fecha actual en el contexto de filtro.
+-- Lógica:
+-- 1. TOTALYTD es una función de Time Intelligence que calcula la expresión ([Total Ventas]) para el período del año hasta la fecha, basándose en la columna de fecha proporcionada.
+
+[Ventas Acumuladas Año (YTD)] =
+TOTALYTD (
+    [Total Ventas],
+    'Tabla de Fechas'[Date]
+)
+
+-- Consideraciones:
+-- - TOTALYTD es un atajo conveniente para CALCULATE con filtros de fechas más complejos.
+-- - Requiere que la columna de fecha sea parte de una tabla de fechas marcada como tal.
+-- - Se puede especificar un argumento opcional para el final del año fiscal si no coincide con el 31 de diciembre.

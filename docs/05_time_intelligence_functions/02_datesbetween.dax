@@ -1,0 +1,20 @@
+-- Medida: [Ventas Últimos 30 Días]
+-- Objetivo: Calcular las ventas totales en los últimos 30 días hasta la fecha máxima del contexto actual.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. DATESBETWEEN genera un rango de fechas que comienza 30 días antes de la fecha máxima del contexto actual y termina en la fecha máxima del contexto actual.
+
+[Ventas Últimos 30 Días] =
+CALCULATE (
+    [Total Ventas],
+    DATESBETWEEN (
+        'Tabla de Fechas'[Date],
+        MAX ('Tabla de Fechas'[Date]) - 30,
+        MAX ('Tabla de Fechas'[Date])
+    )
+)
+
+-- Consideraciones:
+-- - DATESBETWEEN es útil para definir rangos de fechas personalizados de forma dinámica.
+-- - Los argumentos de inicio y fin de la fecha pueden ser expresiones DAX que devuelven una fecha.
+-- - Es una alternativa flexible a otras funciones de inteligencia de tiempo para rangos específicos.
