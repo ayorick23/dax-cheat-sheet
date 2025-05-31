@@ -1,0 +1,18 @@
+-- Tabla Calculada: 'Detalle de Pedidos Simplificado'
+-- Objetivo: Crear una nueva tabla seleccionando solo un subconjunto específico de columnas de la tabla 'Sales'.
+-- Lógica:
+-- 1. SELECTCOLUMNS toma una tabla base ('Sales').
+-- 2. Para cada fila de la tabla base, selecciona las columnas especificadas, opcionalmente renombrándolas y/o creando nuevas columnas calculadas en el proceso.
+
+'Detalle de Pedidos Simplificado' =
+SELECTCOLUMNS (
+    Sales,
+    "ID de Pedido", Sales[OrderID],
+    "Fecha del Pedido", Sales[OrderDate],
+    "Monto Neto", Sales[SalesAmount] - Sales[Discount] -- También se pueden hacer cálculos
+)
+
+-- Consideraciones:
+-- - SELECTCOLUMNS es útil para crear tablas con un conjunto específico de columnas, lo que a menudo se usa para "proyectar" una tabla.
+-- - Cada par de argumentos es "Nombre de la Nueva Columna", "Expresión para la Nueva Columna".
+-- - A diferencia de ADDCOLUMNS, SELECTCOLUMNS solo incluye las columnas que especificas.

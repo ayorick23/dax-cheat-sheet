@@ -1,0 +1,13 @@
+-- Medida: [Usuario Actual del Informe]
+-- Objetivo: Mostrar el nombre de usuario de la persona que está viendo el informe en el servicio de Power BI.
+-- Lógica:
+-- USERPRINCIPALNAME devuelve el nombre principal del usuario (UPN) de la cuenta actual que inició sesión en Power BI.
+
+[Usuario Actual del Informe] =
+USERPRINCIPALNAME ()
+
+-- Consideraciones:
+-- - Esta función es crucial para implementar la seguridad a nivel de fila (Row-Level Security o RLS).
+-- - Solo funciona cuando el informe está publicado y se accede a él a través del servicio de Power BI.
+-- - En Power BI Desktop, generalmente devuelve el nombre de usuario de tu máquina local o un valor de prueba predeterminado si no has iniciado sesión.
+-- - El resultado es una cadena de texto.

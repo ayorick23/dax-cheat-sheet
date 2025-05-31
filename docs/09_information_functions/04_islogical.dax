@@ -1,0 +1,17 @@
+-- Medida: [Tipo de Dato Lógico (Ejemplo)]
+-- Objetivo: Verificar si una expresión DAX evalúa a un tipo de dato lógico (TRUE/FALSE).
+-- Lógica:
+-- ISLOGICAL comprueba el tipo de dato del resultado de la expresión.
+-- Aquí, se usa para demostrar que una comparación (`[Total Ventas] > 1000`) es de tipo lógico.
+
+[Tipo de Dato Lógico (Ejemplo)] =
+IF (
+    ISLOGICAL ([Total Ventas] > 1000),
+    "Es Lógico",
+    "No es Lógico"
+)
+
+-- Consideraciones:
+-- - ISLOGICAL es más común en escenarios de depuración o en funciones dinámicas avanzadas.
+-- - Puede ser útil para validar el tipo de retorno de funciones o expresiones.
+-- - Devuelve un valor booleano.

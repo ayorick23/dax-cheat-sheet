@@ -1,0 +1,12 @@
+-- Tabla Calculada: 'Clientes Únicos'
+-- Objetivo: Obtener una tabla con una lista única de todos los nombres de clientes.
+-- Lógica:
+-- Crea una tabla de una sola columna que contiene solo los valores únicos de la columna 'Customers'[CustomerName].
+
+'Clientes Únicos' =
+DISTINCT (Customers[CustomerName])
+
+-- Consideraciones:
+-- - DISTINCT es útil para obtener listas únicas de valores de una columna.
+-- - Puede usarse en contextos de filtro dentro de CALCULATE o como una tabla calculada independiente.
+-- - También se puede aplicar a una tabla completa (ej. `DISTINCT(Sales)`) para obtener las filas únicas de esa tabla.

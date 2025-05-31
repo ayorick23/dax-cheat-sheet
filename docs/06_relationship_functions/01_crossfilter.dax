@@ -1,0 +1,23 @@
+-- Medida: [Ventas por Gerente de Región (Ambas Direcciones)]
+-- Objetivo: Calcular las ventas totales filtrando la tabla de ventas por la tabla de empleados a través de una relación bidireccional específica.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. CROSSFILTER modifica la dirección de la relación entre 'Employees'[EmployeeID] y 'Sales'[EmployeeID].
+--    - En este caso, establece la dirección a `Both` (ambas direcciones), lo que significa que los filtros fluirán de 'Employees' a 'Sales' y viceversa.
+--    - Esto es útil cuando una relación unidireccional por defecto no permite el flujo de filtro necesario para un cálculo.
+
+[Ventas por Gerente de Región (Ambas Direcciones)] =
+CALCULATE (
+    [Total Ventas],
+    CROSSFILTER (
+        Employees[EmployeeID],  -- Columna del lado "uno" de la relación
+        Sales[EmployeeID],      -- Columna del lado "muchos" de la relación
+        Both                    -- Dirección del filtro: None, OneWay, Both
+    )
+)
+
+-- Consideraciones:
+-- - CROSSFILTER es una función poderosa para modificar dinámicamente el comportamiento del filtro en las relaciones del modelo.
+-- - Se usa principalmente dentro de CALCULATE para cambiar la dirección del filtro de una relación o desactivarla temporalmente.
+-- - Es fundamental para escenarios donde necesitas que los filtros fluyan en una dirección no predeterminada o para manejar relaciones inactivas.
+-- - Usar `Both` puede tener implicaciones en el rendimiento y la ambigüedad si se usa en exceso.

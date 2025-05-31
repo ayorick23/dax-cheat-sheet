@@ -1,0 +1,16 @@
+-- Columna Calculada: [Código de Producto (Guion a Espacio)]
+-- Objetivo: Reemplazar todas las ocurrencias de una subcadena específica por otra subcadena.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', reemplaza todos los guiones ("-") en 'ProductCode' por espacios en blanco (" ").
+
+[Código de Producto (Guion a Espacio)] =
+SUBSTITUTE (
+    Products[ProductCode], -- Texto original
+    "-",                   -- Texto a buscar
+    " "                    -- Texto de reemplazo
+)
+
+-- Consideraciones:
+-- - SUBSTITUTE reemplaza todas las ocurrencias de la subcadena.
+-- - Se puede especificar un argumento opcional `instance_num` para reemplazar solo una ocurrencia específica.
+-- - Es una herramienta poderosa para la limpieza de datos y la normalización de cadenas.

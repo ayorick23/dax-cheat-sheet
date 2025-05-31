@@ -1,0 +1,11 @@
+-- Columna Calculada: [Región en Mayúsculas]
+-- Objetivo: Convertir todos los caracteres de una cadena de texto a mayúsculas.
+-- Lógica:
+-- Para cada fila en la tabla 'Geography', convierte el valor de la columna 'Region' a mayúsculas.
+
+[Región en Mayúsculas] =
+UPPER (Geography[Region])
+
+-- Consideraciones:
+-- - UPPER es útil para normalizar datos de texto o para fines de presentación donde se requiere texto en mayúsculas.
+-- - No afecta a los caracteres no alfabéticos.

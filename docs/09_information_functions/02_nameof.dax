@@ -1,0 +1,12 @@
+-- Medida: [Nombre de Columna de Producto]
+-- Objetivo: Obtener el nombre de una columna como una cadena de texto.
+-- Lógica:
+-- NAMEOF devuelve la cadena de texto literal del nombre de la columna o tabla especificada.
+
+[Nombre de Columna de Producto] =
+NAMEOF (Products[ProductName])
+
+-- Consideraciones:
+-- - NAMEOF es útil para generar cadenas de texto dinámicas, mensajes de error o para depurar.
+-- - También puede usarse con el nombre de una tabla: `NAMEOF(Products)`.
+-- - El resultado es una cadena de texto.

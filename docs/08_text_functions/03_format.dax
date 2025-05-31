@@ -1,0 +1,16 @@
+-- Medida: [Ventas Formateadas]
+-- Objetivo: Mostrar el total de ventas con un formato de moneda específico y cero decimales.
+-- Lógica:
+-- Toma el resultado de la medida [Total Ventas] y lo formatea como una cadena de texto con el formato de moneda deseado.
+
+[Ventas Formateadas] =
+FORMAT (
+    [Total Ventas],
+    "C0" -- Formato de moneda con cero decimales (ej. "$1,234")
+)
+
+-- Consideraciones:
+-- - FORMAT convierte un valor numérico, de fecha o de otro tipo en una cadena de texto formateada.
+-- - Es extremadamente versátil para presentar datos de manera legible en visualizaciones.
+-- - Los códigos de formato son similares a los de Excel y Power Query (ej. "0.00", "P", "dd-mm-yyyy", "C", "C0").
+-- - El resultado es una cadena, no un número, lo que significa que no se puede usar para cálculos posteriores.

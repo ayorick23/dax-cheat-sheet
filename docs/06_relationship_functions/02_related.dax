@@ -1,0 +1,14 @@
+-- Columna Calculada: [Nombre del Producto (en Ventas)]
+-- Objetivo: Traer el nombre del producto de la tabla 'Products' a la tabla 'Sales', basándose en la relación entre ProductID.
+-- Lógica:
+-- Crea una nueva columna en la tabla 'Sales'.
+-- Para cada fila en 'Sales', RELATED busca el valor de 'Sales'[ProductID] en la tabla 'Products' y devuelve el 'ProductName' correspondiente de esa fila en 'Products'.
+
+[Nombre del Producto (en Ventas)] =
+RELATED (Products[ProductName])
+
+-- Consideraciones:
+-- - RELATED es una función que se usa exclusivamente en **columnas calculadas** o dentro de **iteradores (X-functions)**.
+-- - Permite acceder a los valores de una tabla relacionada **en el lado "uno" de una relación uno-a-muchos**, desde el lado "muchos".
+-- - No se puede usar en medidas directamente a menos que esté dentro de un contexto de fila (ej. dentro de SUMX, FILTER).
+-- - Requiere una relación activa entre las dos tablas para funcionar correctamente.

@@ -1,0 +1,16 @@
+-- Tabla Calculada: 'Ventas con Detalle de Cliente'
+-- Objetivo: Unir la tabla 'Sales' con la tabla 'Customers' basándose en columnas con el mismo nombre (ej. CustomerID), similar a un INNER JOIN.
+-- Lógica:
+-- 1. NATURALINNERJOIN combina las filas de 'Sales' y 'Customers' donde los valores de las columnas con nombres idénticos (ej. 'CustomerID') coinciden.
+-- 2. Solo las filas que tienen coincidencias en ambas tablas son incluidas en el resultado.
+
+'Ventas con Detalle de Cliente' =
+NATURALINNERJOIN (
+    Sales,
+    Customers
+)
+
+-- Consideraciones:
+-- - NATURALINNERJOIN realiza un JOIN basado automáticamente en todas las columnas con nombres idénticos entre las tablas.
+-- - Es más conveniente que `JOIN` explícito si tus columnas de unión tienen el mismo nombre y deseas un INNER JOIN.
+-- - Debe usarse con precaución, ya que la coincidencia de columnas por nombre puede no ser siempre la deseada si hay nombres de columnas duplicados en diferentes contextos.

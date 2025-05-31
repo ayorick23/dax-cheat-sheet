@@ -1,0 +1,15 @@
+-- Medida: [Ventas Fin de Trimestre Actual]
+-- Objetivo: Calcular las ventas totales hasta el último día del trimestre actual.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. ENDOFQUARTER devuelve la última fecha del trimestre que se encuentra en el contexto de filtro actual.
+-- 3. Esto es útil para obtener un "total final" de un trimestre.
+
+[Ventas Fin de Trimestre Actual] =
+CALCULATE (
+    [Total Ventas],
+    ENDOFQUARTER ('Tabla de Fechas'[Date])
+)
+
+-- Consideraciones:
+-- - Útil para definir puntos finales de períodos trimestrales.

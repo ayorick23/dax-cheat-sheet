@@ -1,0 +1,12 @@
+-- Columna Calculada: [Es Precio Numérico]
+-- Objetivo: Verificar si el valor en una columna es de tipo numérico.
+-- Lógica:
+-- Para cada fila, comprueba si el valor en 'Products'[Price] es de tipo numérico.
+
+[Es Precio Numérico] =
+ISNUMBER (Products[Price])
+
+-- Consideraciones:
+-- - ISNUMBER es útil para la validación de datos o para crear lógica condicional basada en el tipo de dato.
+-- - Puede ayudar a prevenir errores en cálculos si una columna inesperadamente contiene texto o BLANKs.
+-- - Devuelve un valor booleano.

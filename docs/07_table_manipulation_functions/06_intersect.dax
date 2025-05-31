@@ -1,0 +1,16 @@
+-- Tabla Calculada: 'Productos Vendidos Ambos Años'
+-- Objetivo: Obtener una lista de productos que fueron vendidos tanto en 2023 como en 2024.
+-- Lógica:
+-- 1. Crea dos tablas temporales: una con los productos vendidos en 2023 y otra con los de 2024.
+-- 2. INTERSECT devuelve las filas que son comunes a ambas tablas (es decir, productos presentes en ambas listas).
+
+'Productos Vendidos Ambos Años' =
+INTERSECT (
+    FILTER (ALL (Sales[ProductID]), YEAR (Sales[OrderDate]) = 2023),
+    FILTER (ALL (Sales[ProductID]), YEAR (Sales[OrderDate]) = 2024)
+)
+
+-- Consideraciones:
+-- - INTERSECT devuelve una tabla que contiene solo las filas que aparecen en *ambas* tablas de entrada.
+-- - Las tablas de entrada deben tener el mismo número de columnas y los tipos de datos en las columnas correspondientes deben ser los mismos.
+-- - Útil para encontrar elementos comunes entre conjuntos de datos.

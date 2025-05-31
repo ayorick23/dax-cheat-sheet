@@ -1,0 +1,16 @@
+-- Tabla Calculada: 'Ventas con Margen'
+-- Objetivo: Crear una nueva tabla basada en la tabla 'Sales' y añadir una nueva columna calculada para el margen.
+-- Lógica:
+-- 1. ADDCOLUMNS toma una tabla base ('Sales').
+-- 2. Añade nuevas columnas, en este caso, una llamada "Margen" que calcula la diferencia entre 'SalesAmount' y 'Cost'.
+
+'Ventas con Margen' =
+ADDCOLUMNS (
+    Sales,
+    "Margen", Sales[SalesAmount] - Sales[Cost]
+)
+
+-- Consideraciones:
+-- - ADDCOLUMNS es ideal para enriquecer una tabla existente con nuevas columnas calculadas a nivel de fila.
+-- - La expresión para la nueva columna se evalúa en un contexto de fila para cada fila de la tabla base.
+-- - Es muy potente para cálculos que requieren un contexto de fila pero que no necesitan ser parte del modelo original.

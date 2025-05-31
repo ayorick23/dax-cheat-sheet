@@ -1,0 +1,17 @@
+-- Columna Calculada: [Tiene Descuento]
+-- Objetivo: Verificar si el valor en una columna es BLANK (vacío).
+-- Lógica:
+-- Para cada fila, comprueba si el valor en 'Sales'[Discount] es BLANK.
+-- Devuelve "Sí" si hay un valor (no BLANK), y "No" si es BLANK.
+
+[Tiene Descuento] =
+IF (
+    ISBLANK (Sales[Discount]),
+    "No",
+    "Sí"
+)
+
+-- Consideraciones:
+-- - ISBLANK es crucial para manejar valores faltantes o nulos en tus datos.
+-- - Es común usarla dentro de IF para crear lógica condicional basada en la presencia de datos.
+-- - Devuelve un valor booleano (TRUE/FALSE).

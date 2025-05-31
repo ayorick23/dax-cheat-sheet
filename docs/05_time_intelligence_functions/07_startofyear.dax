@@ -1,0 +1,16 @@
+-- Medida: [Ventas Fin de Año Anterior]
+-- Objetivo: Calcular las ventas totales hasta el último día del año anterior.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. DATEADD mueve el contexto de fecha al año anterior.
+-- 3. ENDOFYEAR asegura que el filtro se aplique hasta el último día de ese año anterior.
+
+[Ventas Fin de Año Anterior] =
+CALCULATE (
+    [Total Ventas],
+    ENDOFYEAR (DATEADD ('Tabla de Fechas'[Date], -1, YEAR))
+)
+
+-- Consideraciones:
+-- - ENDOFYEAR devuelve la última fecha del año que se encuentra en el contexto de filtro actual.
+-- - Muy útil para obtener totales de cierre de año.

@@ -1,0 +1,11 @@
+-- Columna Calculada: [Código de Producto Limpio]
+-- Objetivo: Eliminar los espacios en blanco iniciales y finales de una cadena de texto.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', elimina cualquier espacio adicional al principio o al final de la columna 'ProductCode'.
+
+[Código de Producto Limpio] =
+TRIM (Products[ProductCode])
+
+-- Consideraciones:
+-- - TRIM es fundamental para la limpieza de datos, ya que los espacios adicionales pueden causar problemas en las uniones de datos o filtros.
+-- - Solo elimina los espacios al principio y al final, no los espacios intermedios.

@@ -1,0 +1,20 @@
+-- Medida: [Ventas Inicio de Trimestre]
+-- Objetivo: Calcular las ventas totales desde el inicio del trimestre hasta la fecha actual en el contexto.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. STARTOFQUARTER devuelve la primera fecha del trimestre que se encuentra en el contexto de filtro actual.
+-- 3. La combinación con DATESBETWEEN permite calcular un acumulado desde el inicio del trimestre.
+
+[Ventas Inicio de Trimestre] =
+CALCULATE (
+    [Total Ventas],
+    DATESBETWEEN (
+        'Tabla de Fechas'[Date],
+        STARTOFQUARTER ('Tabla de Fechas'[Date]),
+        MAX ('Tabla de Fechas'[Date])
+    )
+)
+
+-- Consideraciones:
+-- - Similar a STARTOFMONTH, pero a nivel de trimestre.
+-- - También existe TOTALQTD (Total Quarter To Date) como una alternativa más directa.

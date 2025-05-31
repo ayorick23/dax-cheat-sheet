@@ -1,0 +1,11 @@
+-- Columna Calculada: [Categoría en Minúsculas]
+-- Objetivo: Convertir todos los caracteres de una cadena de texto a minúsculas.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', convierte el valor de la columna 'Category' a minúsculas.
+
+[Categoría en Minúsculas] =
+LOWER (Products[Category])
+
+-- Consideraciones:
+-- - LOWER es útil para normalizar datos de texto, asegurando que las comparaciones de texto no sean sensibles a mayúsculas y minúsculas.
+-- - No afecta a los caracteres no alfabéticos.

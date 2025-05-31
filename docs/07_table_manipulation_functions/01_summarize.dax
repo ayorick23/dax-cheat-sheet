@@ -1,0 +1,19 @@
+-- Tabla Calculada: 'Ventas por Cliente y Producto'
+-- Objetivo: Crear una tabla resumen que muestre las ventas totales por cada combinación única de cliente y producto.
+-- Lógica:
+-- 1. SUMMARIZE agrupa la tabla 'Sales' por las columnas 'Customer'[CustomerName] y 'Product'[ProductName].
+-- 2. Para cada grupo resultante (cada combinación única de cliente y producto), calcula el '[Total Ventas]'.
+
+'Ventas por Cliente y Producto' =
+SUMMARIZE (
+    Sales,
+    Customers[CustomerName],
+    Products[ProductName],
+    "Total de Ventas", [Total Ventas] -- Nombre de la nueva columna y la expresión a calcular
+)
+
+-- Consideraciones:
+-- - SUMMARIZE es fundamental para crear tablas resumen o para agregar datos a diferentes niveles de granularidad.
+-- - Las columnas especificadas como los primeros argumentos son las que definen la granularidad de la agrupación.
+-- - Los argumentos posteriores son pares de "Nombre de la Nueva Columna", "Expresión de Agregación".
+-- - Es una alternativa poderosa a GROUPBY para escenarios más simples de agregación.

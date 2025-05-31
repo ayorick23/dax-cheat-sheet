@@ -1,0 +1,12 @@
+-- Columna Calculada: [Descripción Completa de Producto]
+-- Objetivo: Unir dos cadenas de texto en una sola.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', combina el 'ProductName' con el 'ProductColor', separándolos con un guion.
+
+[Descripción Completa de Producto] =
+CONCATENATE (Products[ProductName], " - " & Products[ProductColor])
+
+-- Consideraciones:
+-- - CONCATENATE solo puede unir dos cadenas a la vez.
+-- - Si necesitas unir más de dos cadenas, puedes usar el operador de concatenación `&`.
+-- - Es útil para crear descripciones compuestas o claves combinadas.

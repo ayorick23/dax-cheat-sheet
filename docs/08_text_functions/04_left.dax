@@ -1,0 +1,15 @@
+-- Columna Calculada: [Prefijo de Código de Producto]
+-- Objetivo: Extraer un número específico de caracteres desde el principio de una cadena de texto.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', toma los primeros 3 caracteres de la columna 'ProductCode'.
+
+[Prefijo de Código de Producto] =
+LEFT (
+    Products[ProductCode],
+    3
+)
+
+-- Consideraciones:
+-- - LEFT devuelve una subcadena del lado izquierdo de la cadena original.
+-- - Si el número de caracteres es mayor que la longitud de la cadena, devuelve toda la cadena.
+-- - Útil para extraer prefijos, códigos de región o identificadores.

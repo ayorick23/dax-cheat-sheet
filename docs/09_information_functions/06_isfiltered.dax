@@ -1,0 +1,17 @@
+-- Medida: [Mensaje de Filtro de Producto]
+-- Objetivo: Indicar si una columna específica ('Products'[Category]) está siendo filtrada en el contexto actual.
+-- Lógica:
+-- Si la columna 'Products'[Category] tiene un filtro aplicado, devuelve el mensaje "Categoría filtrada".
+-- De lo contrario, devuelve "Ninguna categoría seleccionada".
+
+[Mensaje de Filtro de Producto] =
+IF (
+    ISFILTERED (Products[Category]),
+    "Categoría filtrada",
+    "Ninguna categoría seleccionada"
+)
+
+-- Consideraciones:
+-- - ISFILTERED es útil para crear medidas dinámicas que reaccionan a las selecciones de filtro del usuario.
+-- - Permite cambiar el comportamiento o la presentación de una visualización si una columna en particular está siendo filtrada.
+-- - Devuelve un valor booleano.

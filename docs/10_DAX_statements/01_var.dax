@@ -1,0 +1,20 @@
+-- Medida: [Ventas Netas con Impuestos]
+-- Objetivo: Calcular las ventas netas incluyendo un impuesto, haciendo el cálculo más legible y potencialmente más eficiente.
+-- Lógica:
+-- 1. Declara una variable `_TotalSales` para almacenar el resultado de la medida [Total Ventas].
+-- 2. Declara una variable `_TaxRate` para almacenar la tasa de impuesto (ej. 0.15 para 15%).
+-- 3. La parte `RETURN` utiliza estas variables para calcular el resultado final, lo que mejora la legibilidad.
+
+[Ventas Netas con Impuestos] =
+VAR _TotalSales = [Total Ventas] -- Asume que [Total Ventas] es una medida existente
+VAR _TaxRate = 0.15
+VAR _SalesAfterTax = _TotalSales * (1 + _TaxRate)
+RETURN
+    _SalesAfterTax
+
+-- Consideraciones:
+-- - Las variables (VAR) son una de las mejores prácticas en DAX.
+-- - Mejoran la legibilidad del código, especialmente en expresiones complejas.
+-- - Pueden mejorar el rendimiento al almacenar resultados intermedios que se calculan una sola vez, incluso si se usan múltiples veces en la expresión RETURN.
+-- - Se definen al principio de la expresión y su ámbito está limitado a esa misma expresión.
+-- - La sintaxis para definir una variable es `VAR <nombre_variable> = <expresión>`. El resultado final se devuelve con `RETURN <expresión>`.

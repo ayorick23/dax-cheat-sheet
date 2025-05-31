@@ -1,0 +1,16 @@
+-- Columna Calculada: [Coincidencia Exacta de Nombre]
+-- Objetivo: Comprobar si el nombre de un producto coincide exactamente (sensible a mayúsculas y minúsculas) con un valor específico.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', compara si el 'ProductName' es exactamente igual a "Laptop".
+-- Devuelve TRUE si son idénticos (incluyendo mayúsculas/minúsculas), FALSE en caso contrario.
+
+[Coincidencia Exacta de Nombre] =
+EXACT (
+    Products[ProductName],
+    "Laptop"
+)
+
+-- Consideraciones:
+-- - EXACT es sensible a mayúsculas y minúsculas, a diferencia del operador de igualdad (=) estándar en DAX.
+-- - Útil para verificaciones de cadena precisas donde la capitalización importa.
+-- - Devuelve un valor booleano (TRUE/FALSE).

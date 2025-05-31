@@ -1,0 +1,18 @@
+-- Medida: [Estadísticas de Ventas (Ejemplo)]
+-- Objetivo: Obtener información estadística sobre una columna, como su valor mínimo, máximo y recuento.
+-- Lógica:
+-- COLUMNSTATISTICS devuelve un registro con metadatos y estadísticas sobre la columna especificada.
+-- Para usarla en una medida que devuelva un escalar, se debe acceder a una propiedad específica del registro, como Min, Max o Count.
+
+[Estadísticas de Ventas (Ejemplo)] =
+VAR _ColumnStats = COLUMNSTATISTICS (Sales[SalesAmount])
+RETURN
+    "Min: " & FORMAT (_ColumnStats[Min], "C2") & " | " &
+    "Max: " & FORMAT (_ColumnStats[Max], "C2") & " | " &
+    "Count: " & FORMAT (_ColumnStats[Count], "N0")
+
+-- Consideraciones:
+-- - COLUMNSTATISTICS es una función de tabla que devuelve un registro con propiedades estadísticas.
+-- - No se usa directamente en visuales a menos que se extraiga una propiedad específica como en el ejemplo.
+-- - Es más útil para depuración o para crear medidas que informen sobre la calidad o el rango de los datos.
+-- - Las propiedades disponibles incluyen Min, Max, Count, DistinctCount, Sum, Average, IsUnique, etc.

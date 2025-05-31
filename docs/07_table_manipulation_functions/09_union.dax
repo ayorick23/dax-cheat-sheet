@@ -1,0 +1,17 @@
+-- Tabla Calculada: 'Todos los Pedidos de 2023 y 2024'
+-- Objetivo: Combinar todas las filas de pedidos de 2023 con todas las filas de pedidos de 2024 en una sola tabla.
+-- Lógica:
+-- 1. Crea dos tablas temporales: una para pedidos de 2023 y otra para 2024.
+-- 2. UNION combina todas las filas de la primera tabla con todas las filas de la segunda tabla.
+
+'Todos los Pedidos de 2023 y 2024' =
+UNION (
+    FILTER (Sales, YEAR (Sales[OrderDate]) = 2023),
+    FILTER (Sales, YEAR (Sales[OrderDate]) = 2024)
+)
+
+-- Consideraciones:
+-- - UNION devuelve una tabla que contiene todas las filas de todas las tablas de entrada.
+-- - Las tablas de entrada deben tener el mismo número de columnas y los tipos de datos en las columnas correspondientes deben ser los mismos.
+-- - Útil para combinar conjuntos de datos similares que están en tablas separadas o subconjuntos de la misma tabla.
+-- - No elimina filas duplicadas, si deseas eliminarlas, puedes envolver la UNION con un DISTINCT.

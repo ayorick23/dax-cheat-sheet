@@ -1,0 +1,16 @@
+-- Tabla Calculada: 'Todos los Clientes con Sus Ventas'
+-- Objetivo: Unir la tabla 'Customers' con la tabla 'Sales', incluyendo todos los clientes, incluso si no tienen ventas.
+-- Lógica:
+-- 1. NATURALLEFTOUTERJOIN combina las filas de 'Customers' (tabla izquierda) con 'Sales' (tabla derecha) basándose en columnas con el mismo nombre.
+-- 2. Incluye todas las filas de la tabla izquierda ('Customers'), y solo las filas coincidentes de la tabla derecha ('Sales'). Si no hay coincidencia, las columnas de 'Sales' serán BLANK.
+
+'Todos los Clientes con Sus Ventas' =
+NATURALLEFTOUTERJOIN (
+    Customers, -- Tabla izquierda (todas sus filas serán incluidas)
+    Sales      -- Tabla derecha
+)
+
+-- Consideraciones:
+-- - NATURALLEFTOUTERJOIN es útil cuando quieres mantener todas las filas de una tabla mientras añades información de otra tabla.
+-- - Al igual que NATURALINNERJOIN, se une automáticamente por columnas con nombres idénticos.
+-- - El orden de las tablas es crucial (la primera es la tabla izquierda).

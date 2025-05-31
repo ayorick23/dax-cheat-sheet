@@ -1,0 +1,18 @@
+-- Medida: [Ventas por Categoría (Crossfilter)]
+-- Objetivo: Calcular las ventas por categoría solo si esa categoría está siendo cross-filtrada desde otra tabla.
+-- Lógica:
+-- 1. Si la tabla 'ProductCategories' está siendo cross-filtrada (ej. por una selección en una tabla relacionada), entonces devuelve el [Total Ventas].
+-- 2. De lo contrario, devuelve BLANK.
+
+[Ventas por Categoría (Crossfilter)] =
+IF (
+    ISCROSSFILTERED (ProductCategories),
+    [Total Ventas],
+    BLANK ()
+)
+
+-- Consideraciones:
+-- - ISCROSSFILTERED detecta si una tabla o columna está siendo filtrada por otra tabla o columna en el modelo a través de una relación.
+-- - A diferencia de ISFILTERED, que solo comprueba si *algún* filtro está aplicado, ISCROSSFILTERED se enfoca en filtros provenientes de *otras* tablas.
+-- - Útil para crear lógicas condicionales más sofisticadas en función de cómo interactúan las tablas en el modelo.
+-- - Devuelve un valor booleano.

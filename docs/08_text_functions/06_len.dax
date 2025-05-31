@@ -1,0 +1,12 @@
+-- Columna Calculada: [Longitud del Nombre de Cliente]
+-- Objetivo: Obtener el número total de caracteres en una cadena de texto.
+-- Lógica:
+-- Para cada fila en la tabla 'Customers', cuenta la cantidad de caracteres en la columna 'CustomerName'.
+
+[Longitud del Nombre de Cliente] =
+LEN (Customers[CustomerName])
+
+-- Consideraciones:
+-- - LEN cuenta todos los caracteres, incluyendo espacios y caracteres especiales.
+-- - Devuelve un número entero.
+-- - Útil para validaciones de datos, formatos de longitud fija o análisis de longitud de texto.

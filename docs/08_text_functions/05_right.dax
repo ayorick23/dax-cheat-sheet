@@ -1,0 +1,15 @@
+-- Columna Calculada: [Sufijo de Código de Producto]
+-- Objetivo: Extraer un número específico de caracteres desde el final de una cadena de texto.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', toma los últimos 4 caracteres de la columna 'ProductCode'.
+
+[Sufijo de Código de Producto] =
+RIGHT (
+    Products[ProductCode],
+    4
+)
+
+-- Consideraciones:
+-- - RIGHT devuelve una subcadena del lado derecho de la cadena original.
+-- - Similar a LEFT, si el número de caracteres es mayor que la longitud de la cadena, devuelve toda la cadena.
+-- - Útil para extraer sufijos, números de serie o códigos de versión.

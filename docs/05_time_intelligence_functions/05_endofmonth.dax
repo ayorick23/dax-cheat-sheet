@@ -1,0 +1,16 @@
+-- Medida: [Ventas Fin de Mes Anterior]
+-- Objetivo: Calcular las ventas totales hasta el último día del mes anterior.
+-- Lógica:
+-- 1. Utiliza CALCULATE para modificar el contexto de filtro de la medida [Total Ventas].
+-- 2. DATEADD mueve el contexto de fecha al mes anterior.
+-- 3. ENDOFMONTH asegura que el filtro se aplique hasta el último día de ese mes anterior.
+
+[Ventas Fin de Mes Anterior] =
+CALCULATE (
+    [Total Ventas],
+    ENDOFMONTH (DATEADD ('Tabla de Fechas'[Date], -1, MONTH))
+)
+
+-- Consideraciones:
+-- - ENDOFMONTH devuelve la última fecha del mes que se encuentra en el contexto de filtro actual.
+-- - Es útil para definir puntos finales de períodos.

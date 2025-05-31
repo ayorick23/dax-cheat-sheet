@@ -1,0 +1,17 @@
+-- Columna Calculada: [Código de Producto (Sección Actualizada)]
+-- Objetivo: Reemplazar una parte de una cadena de texto por otra, basándose en la posición inicial y la longitud.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', reemplaza los 3 caracteres a partir de la posición 4 en 'ProductCode' por la cadena "XYZ".
+
+[Código de Producto (Sección Actualizada)] =
+REPLACE (
+    Products[ProductCode], -- Texto original
+    4,                     -- Posición inicial para el reemplazo
+    3,                     -- Número de caracteres a reemplazar
+    "XYZ"                  -- Texto de reemplazo
+)
+
+-- Consideraciones:
+-- - REPLACE es útil cuando conoces la posición exacta y la longitud de la parte de la cadena que quieres cambiar.
+-- - A diferencia de SUBSTITUTE, no busca una subcadena, sino que opera por posición.
+-- - Útil para actualizar partes de identificadores estructurados o cadenas de versión.

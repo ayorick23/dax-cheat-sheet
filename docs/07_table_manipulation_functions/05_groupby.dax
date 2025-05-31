@@ -1,0 +1,18 @@
+-- Tabla Calculada: 'Ventas Agrupadas por País'
+-- Objetivo: Agrupar las ventas por país y calcular las ventas totales y el conteo de pedidos para cada país.
+-- Lógica:
+-- 1. GROUPBY agrupa la tabla 'Sales' por la columna 'Geography'[Country].
+-- 2. Para cada grupo, crea dos nuevas columnas agregadas: "Total Ventas" (suma de ventas) y "Conteo Pedidos" (conteo de OrderID).
+
+'Ventas Agrupadas por País' =
+GROUPBY (
+    Sales,
+    Geography[Country], -- Columnas por las que agrupar
+    "Total Ventas", SUMX (CURRENTGROUP (), Sales[SalesAmount]),
+    "Conteo Pedidos", COUNTX (CURRENTGROUP (), Sales[OrderID])
+)
+
+-- Consideraciones:
+-- - GROUPBY es más flexible que SUMMARIZE para escenarios de agregación avanzada, especialmente cuando se necesitan expresiones a nivel de grupo.
+-- - `CURRENTGROUP()` es una función especial utilizada dentro de GROUPBY que hace referencia a las filas del grupo actual.
+-- - A menudo se usa para crear tablas temporales o columnas en la memoria.

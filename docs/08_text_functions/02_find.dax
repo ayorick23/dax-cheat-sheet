@@ -1,0 +1,18 @@
+-- Columna Calculada: [Posición del Guion]
+-- Objetivo: Encontrar la posición inicial de un carácter específico (guion) dentro de una cadena de texto.
+-- Lógica:
+-- Para cada fila en la tabla 'Products', busca la primera aparición del carácter "-" (guion) en la columna 'ProductCode'.
+-- Devuelve la posición numérica del carácter o BLANK si no se encuentra.
+
+[Posición del Guion] =
+FIND (
+    "-",            -- Carácter o subcadena a buscar
+    Products[ProductCode], -- Texto donde buscar
+    1,              -- Posición inicial de búsqueda (opcional, por defecto 1)
+    BLANK ()        -- Valor si no se encuentra (opcional, por defecto error)
+)
+
+-- Consideraciones:
+-- - FIND es sensible a mayúsculas y minúsculas.
+-- - Si la subcadena no se encuentra, devuelve un error si no se especifica el argumento de `value_if_not_found`.
+-- - Útil para parsear cadenas o extraer partes de ellas.

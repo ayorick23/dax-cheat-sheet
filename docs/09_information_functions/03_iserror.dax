@@ -1,0 +1,22 @@
+-- Medida: [Ratio de Rendimiento (Seguro)]
+-- Objetivo: Calcular un ratio de rendimiento, y si el cálculo resulta en un error (ej. división por cero), devolver BLANK.
+-- Lógica:
+-- 1. Intenta calcular la expresión `DIVIDE(SUM(FactSales[Revenue]), SUM(FactSales[Units]))`.
+-- 2. Si el resultado de esa expresión es un error (por ejemplo, si `SUM(FactSales[Units])` es cero), ISERROR devolverá TRUE.
+-- 3. Si ISERROR es TRUE, la función IF devuelve BLANK(). De lo contrario, devuelve el resultado del ratio.
+
+[Ratio de Rendimiento (Seguro)] =
+VAR _PerformanceRatio = DIVIDE (SUM (FactSales[Revenue]), SUM (FactSales[Units]))
+RETURN
+    IF (
+        ISERROR (_PerformanceRatio),
+        BLANK (),
+        _PerformanceRatio
+    )
+
+-- Consideraciones:
+-- - ISERROR es una función de información que verifica si una expresión DAX devuelve un error.
+-- - Devuelve TRUE si la expresión resulta en un error; de lo contrario, devuelve FALSE.
+-- - Es útil cuando necesitas manejar errores de manera específica, más allá de lo que `IFERROR` o `DIVIDE` pueden hacer por sí solos.
+-- - A menudo se usa en combinación con `IF` para implementar lógica condicional basada en la presencia de errores.
+-- - Es una buena práctica usar `DIVIDE` (que ya maneja la división por cero) en lugar de una división simple (`/`) para reducir la necesidad de `ISERROR` para ese caso particular.
