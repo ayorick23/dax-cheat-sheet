@@ -1,8 +1,21 @@
-# <img width="30" height="30" src="https://img.icons8.com/?size=100&id=Ny0t2MYrJ70p&format=png&color=000000" alt="power-bi"> DAX Cheat Sheet
+# <img width="30" height="30" src="https://img.icons8.com/?size=100&id=Ny0t2MYrJ70p&format=png&color=000000" alt="power-bi"> **DAX Cheat Sheet**
 
 ¡Bienvenido/a a Power BI **DAX Cheat Sheet**! Este repositorio es tu compañero ideal para dominar las fórmulas y funciones de DAX (_Data Analysis Expressions_) en Power BI. Ya seas un principiante que busca comprender los conceptos básicos o un analista experimentado que necesita una referencia rápida, ¡aquí encontrarás lo que necesitas!
 
 Este espacio te ofrece una colección organizada de las funciones DAX más utilizadas, cada una con su explicación clara, ejemplos de uso y un archivo .dax con implementaciones prácticas para que puedas aplicarlas directamente en tus modelos de datos.
+
+## Tabla de Contenidos
+
+- [ **DAX Cheat Sheet**](#-dax-cheat-sheet)
+  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [🌎 Acerca de](#-acerca-de)
+  - [🚀 ¿Qué encontrarás aquí?](#-qué-encontrarás-aquí)
+  - [📂 Estructura del Repositorio](#-estructura-del-repositorio)
+  - [📝 ¿Cómo Usarlo?](#-cómo-usarlo)
+  - [🤝 Contribuciones](#-contribuciones)
+  - [🫂 Referencias y Agradecimientos](#-referencias-y-agradecimientos)
+  - [📃 Licencia](#-licencia)
+  - [✉️ Contáctame](#️-contáctame)
 
 ## 🌎 Acerca de
 
