@@ -1,5 +1,9 @@
 # Funciones de Inteligencia del Tiempo
 
+Las funciones de inteligencia de tiempo en DAX permiten a los usuarios realizar análisis y comparaciones basadas en el tiempo, como cálculos de año tras año, mes a mes, etc. Estas funciones son cruciales para comprender tendencias, crecimiento y rendimiento a lo largo del tiempo en informes y análisis de datos.
+
+## Funciones Principales
+
 - `DATEADD(<dates>, <number_of_intervals>, <interval>)`: Mueve una fecha por un intervalo específico.
 - `DATESBETWEEN(<dates>, <date_1>, <date_2>)`: Devuelve las fechas entre fechas especificadas.
 - `TOTALYTD(<expression>, <dates>[, <filter>][, <year_end_date>])`: Evalúa el valor del año hasta la fecha de la expresión en el contexto actual.

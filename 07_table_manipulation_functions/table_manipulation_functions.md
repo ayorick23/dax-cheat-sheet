@@ -1,5 +1,9 @@
 # Funciones de Manipulación de Tablas
 
+En DAX, las funciones de manipulación de tablas permiten crear nuevas tablas o modificar las existentes para realizar análisis más detallados. Estas funciones son esenciales para transformar datos y obtener información valiosa.
+
+## Funciones Principales
+
 - `SUMMARIZE(<table>, <groupBy_columnName>[, <groupBy_columnName>]…[, <name>, <expression>]…)`: Devuelve una tabla de resumen de los totales solicitados para un conjunto de grupos.
 - `DISTINCT(<table>)`: Devuelve una tabla eliminando filas duplicadas de otra tabla o expresión.
 - `ADDCOLUMNS(<table>, <name>, <expression>[, <name>, <expression>]…)`: Agrega columnas calculadas a la tabla o expresión de tabla dada.

@@ -1,5 +1,9 @@
 # Funciones de Texto
 
+DAX incluye un conjunto de funciones de texto basadas en la biblioteca de funciones de cadena en Excel, pero que se han modificado para trabajar con tablas y columnas en modelos tabulares. En esta sección se describen las funciones de texto disponibles en el idioma DAX.
+
+## Funciones Principales
+
 - `EXACT(<text_1>, <text_2>)`: Comprueba si dos cadenas son idénticas (`XACT()` distingue entre mayúsculas y minúsculas).
 - `FIND(<text_tofind>, <in_text>)`: Devuelve la posición inicial de un texto dentro de otro texto (`FIND()` distingue entre mayúsculas y minúsculas).
 - `FORMAT(<value>, <format>)`: Convierte un valor en un texto en el formato de número especificado.

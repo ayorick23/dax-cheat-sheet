@@ -1,5 +1,9 @@
 # Funciones de Fecha y Hora
 
+En DAX, las funciones de fecha y hora permiten manipular y calcular datos basados en fechas y horas. Estas funciones son esenciales para tareas como extraer partes de una fecha (año, mes, día), calcular diferencias entre fechas, y trabajar con datos de tiempo en modelos de datos.
+
+## Funciones Principales
+
 - `CALENDAR(<start_date>, <end_date>)`: Devuelve una tabla con una sola columna denominada "Fecha" que contiene un conjunto contiguo de fechas.
 - `DATE(<year>, <month>, <day>)`: Devuelve la fecha especificada en formato de fecha y hora.
 - `DATEDIFF(<date_1>, <date_2>, <interval>)`: Devuelve el número de unidades entre dos fechas según lo definido en `<interval>`.

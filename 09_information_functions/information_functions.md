@@ -1,5 +1,9 @@
 # Funciones de Información
 
+En DAX, las funciones de información se utilizan para obtener información sobre los datos o el contexto en el que se evalúa una fórmula. Estas funciones no realizan cálculos directamente, sino que proporcionan detalles sobre el tipo de dato, errores, relaciones, o el contexto de la evaluación.
+
+## Funciones Principales
+
 - `COLUMNSTATISTICS()`: Devuelve estadísticas de cada columna de cada tabla. Esta función no tiene argumentos.
 - `NAMEOF(<value>)`: Devuelve el nombre de la columna o medida de un valor.
 - `ISBLANK(<value>) // ISERROR(<value>)`: Devuelve si el valor está en blanco // un error.

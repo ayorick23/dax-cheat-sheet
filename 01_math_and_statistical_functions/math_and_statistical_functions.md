@@ -1,5 +1,9 @@
 # Funciones matemáticas y estadísticas
 
+En **DAX**, las funciones matemáticas y estadísticas permiten realizar cálculos y análisis sobre los datos en tus modelos. DAX ofrece una variedad de funciones para trabajar con números, realizar agregaciones y obtener información estadística.
+
+## Funciones Principales
+
 - `SUM(<column>)`: Suma todos los números en una columna.
 - `SUMX(<table>, <expression>)`: Devuelve la suma de una expresión evaluada para cada fila de una tabla.
 - `AVERAGE(<column>)`: Devuelve el promedio (media aritmética) de todos los números en una columna.
