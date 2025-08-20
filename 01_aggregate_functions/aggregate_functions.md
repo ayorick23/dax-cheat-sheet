@@ -1,4 +1,4 @@
-# Funciones de Agregación y Matemáticas
+# Funciones de Agregación
 
 En **DAX** (_Data Analysis Expressions_), las funciones de agregación y matemáticas te permiten resumir y analizar grandes volúmenes de datos. Se dividen en dos categorías principales:
 

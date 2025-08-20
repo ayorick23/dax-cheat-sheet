@@ -1,0 +1,15 @@
+-- Columna Calculada: [Cantidad de Ventas (en Productos)]
+-- Objetivo: Contar el número de transacciones de ventas para cada producto directamente en la tabla 'Products'.
+-- Lógica:
+-- Crea una nueva columna en la tabla 'Products'.
+-- Para cada fila en 'Products', RELATEDTABLE devuelve la tabla 'Sales' filtrada solo para ese producto.
+-- Luego, COUNTROWS cuenta el número de filas (transacciones de venta) en esa tabla filtrada.
+
+[Cantidad de Ventas (en Productos)] =
+COUNTROWS (RELATEDTABLE (Sales))
+
+-- Consideraciones:
+-- - RELATEDTABLE es una función que se usa en **columnas calculadas** o **medidas**.
+-- - Permite acceder a una tabla completa de datos relacionados **en el lado "muchos" de una relación uno-a-muchos**, desde el lado "uno".
+-- - A menudo se utiliza junto con una **función de agregación** (como COUNTROWS, SUMX, AVERAGEX, etc.) para resumir los datos del lado "muchos".
+-- - Requiere una relación activa entre las dos tablas para funcionar correctamente.
