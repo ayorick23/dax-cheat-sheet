@@ -4,17 +4,17 @@
 
 Este espacio te ofrece una colección organizada de las funciones DAX más utilizadas, cada una con su explicación clara, ejemplos de uso y un archivo .dax con implementaciones prácticas para que puedas aplicarlas directamente en tus modelos de datos.
 
-## Tabla de Contenidos
+## 📚 Tabla de Contenidos
 
 - [ **DAX Cheat Sheet**](#-dax-cheat-sheet)
-  - [Tabla de Contenidos](#tabla-de-contenidos)
+  - [📚 Tabla de Contenidos](#-tabla-de-contenidos)
   - [🌎 Acerca de](#-acerca-de)
   - [🚀 ¿Qué encontrarás aquí?](#-qué-encontrarás-aquí)
   - [📂 Estructura del Repositorio](#-estructura-del-repositorio)
   - [📝 ¿Cómo Usarlo?](#-cómo-usarlo)
   - [🤝 Contribuciones](#-contribuciones)
   - [🫂 Referencias y Agradecimientos](#-referencias-y-agradecimientos)
-  - [📃 Licencia](#-licencia)
+  - [🎖️ Licencia](#️-licencia)
   - [✉️ Contáctame](#️-contáctame)
 
 ## 🌎 Acerca de
@@ -25,10 +25,9 @@ Este **DAX Cheat Sheet** está diseñado para ser una fuente de referencia rápi
 
 ## 🚀 ¿Qué encontrarás aquí?
 
-- `docs/` → Contiene subdirectorios, cada uno representando una familia de funciones DAX.
-  - Cada subdirectorio (`01_math_and_statistical_functions/`, etc.) contiene:
-    - Un archivo `.md` (ej: `math_and_statistical_functions.md`) que ofrece una explicación general de las funciones en esa categoría y cómo usarlas.
-    - Archivos `.dax` individuales (ej: `01_sum.dax`, `02_sumx.dax`) con ejemplos de código DAX listos para usar para cada función específica.
+- Directorios: Cada directorio (`aggregate_functions/`, etc.) contiene:
+  - Un archivo `.md` (ej: `aggregate_functions.md`) que ofrece una explicación general de las funciones en esa categoría y cómo usarlas.
+  - Archivos `.dax` individuales (ej: `01_sum.dax`, `02_sumx.dax`) con ejemplos de código DAX listos para usar para cada función específica.
 
 ## 📂 Estructura del Repositorio
 
@@ -36,34 +35,34 @@ El repositorio está organizado de forma modular, agrupando las funciones DAX po
 
 ```bash
 DAX-cheat-sheet/
+├── LICENSE
 ├── README.md
-└── docs/
-    ├── 01_math_and_statistcal_functions/
-    │   ├── math_and_statistical_functions.md
-    │   ├── 01_sum.dax
-    │   ├── 02_sumx.dax
-    │   └── ...
-    ├── 02_filter_functions/
-    │   ├── filter_functions.md
-    │   ├── 01_filter.dax
-    │   ├── 02_calculate.dax
-    │   └── ...
-    ├── 03_logical_functions/
-    │   ├── logical_functions.md
-    │   ├── 01_if.dax
-    │   ├── 02_and.dax
-    │   └── ...
-    ├── 04_date_and_time_functions/
-    │   ├── date_and_time_functions.md
-    │   ├── 01_calendar.dax
-    │   ├── 02_date.dax
-    │   └── ...
-    ├── 05_time_intelligence_functions/
-    │   ├── time_intelligence_functions.md
-    │   ├── 01_dateadd.dax
-    │   ├── 02_datesbetween.dax
-    │   └── ...
-    └── ...
+├── 01_aggregate_functions/
+│   ├── aggregate_functions.md
+│   ├── 01_sum.dax
+│   ├── 02_sumx.dax
+│   └── ...
+├── 02_filter_functions/
+│   ├── filter_functions.md
+│   ├── 01_filter.dax
+│   ├── 02_calculate.dax
+│   └── ...
+├── 03_logical_functions/
+│   ├── logical_functions.md
+│   ├── 01_if.dax
+│   ├── 02_and.dax
+│   └── ...
+├── 04_date_and_time_functions/
+│   ├── date_and_time_functions.md
+│   ├── 01_calendar.dax
+│   ├── 02_date.dax
+│   └── ...
+├── 05_time_intelligence_functions/
+│   ├── time_intelligence_functions.md
+│   ├── 01_dateadd.dax
+│   ├── 02_datesbetween.dax
+│   └── ...
+└── ...
 ```
 
 ## 📝 ¿Cómo Usarlo?
@@ -82,16 +81,16 @@ Para aprovechar al máximo este `DAX-cheat-sheet`, sigue estos pasos:
    cd DAX-cheat-sheet
    ```
 
-3. **Explora los comandos:** Dirígete al directorio `docs/` y explora las diferentes categorías de funciones. Por ejemplo, para entender las funciones matemáticas y estadísticas:
+3. **Explora los comandos:** Dirígete al directorio de tu interés y explora las diferentes categorías de funciones. Por ejemplo, para entender las funciones de agregación y matemáticas:
 
    ```bash
-   cd docs/01_math_and_statistical_functions/
+   cd 01_aggregate_functions/
    ```
 
 4. **Lee las explicaciones:** Abre el archivo `.md` dentro de cada categoría para obtener una descripción general y pautas de uso.
 
    ```bash
-   cat math_and_statistical_functions.md
+   cat aggregate_functions.md
    ```
 
 5. **Revisa y usa los ejemplos DAX:** Cada archivo `.dax` contiene un ejemplo práctico de cómo se usa la función. Puedes copiar y pegar el código DAX directamente en Power BI Desktop (en una medida, columna calculada o tabla calculada).
@@ -125,7 +124,7 @@ Este repositorio ha sido creado recopilando y sintetizando información de diver
 
 ¡Agradezco a todos estos recursos por su invaluable contribución al conocimiento de DAX!
 
-## 📃 Licencia
+## 🎖️ Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
